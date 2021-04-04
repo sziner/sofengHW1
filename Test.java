@@ -21,7 +21,7 @@ public class Test {
 					+ "10. Load contacts from text file\n"
 					+ "11. Exit\n");
 			op=s.nextInt();
-			s.nextLine();
+			//s.nextLine();
 			if(op==1)
 			{
 				System.out.println("enter a name:");
@@ -69,7 +69,7 @@ public class Test {
 			}
 			if(op==8)
 			{
-
+				pb.reverse();
 				continue;
 			}
 			if(op==9)

@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class PhoneBook {
+public class PhoneBook
+{
  
  private LinkedList<Contact> list = new LinkedList<Contact>();
  
@@ -41,34 +42,17 @@ public class PhoneBook {
  }
  public void printPhoneBook() {
 	 for(int i=0;i<list.size();i++) {
-		System.out.print(1+": ");
 	 	list.get(i).print();
 	}
  }
  public void reverse()
  {
-	ListIterator<Contact> head = list.listIterator(0);
-	
-	reverseUtil(head, null);
+	LinkedList<Contact> revLinkedList = new LinkedList<Contact>();
+        for (int i = list.size() - 1; i >= 0; i--)
+		{
+            revLinkedList.add(list.get(i));
+        }
+		list.clear();
+		list = revLinkedList;
  }
- void reverseUtil(ListIterator<Contact> curr, ListIterator<Contact> prev) { 
-		  
-	/* If last node mark it head*/
-	if (curr.nextIndex() == list.size()) { 
-		head = curr; 
-
-		/* Update next to prev node */
-		curr.next = prev; 
-		return; 
-	} 
-
-	/* Save curr->next node for recursive call */
-	Node next1 = curr.next; 
-
-	/* and update next ..*/
-	curr.next = prev; 
-
-	reverseUtil(next1, curr); 
-	return; 
-}
 }
