@@ -18,6 +18,6 @@ public class Contact {
 	return str;
 }
  public void print() {
-	 System.out.println(this.name + " - " + this.phonenumber);
+	 System.out.println(this.toString());
  }
 }

@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 public class PhoneBook
 {
 	private LinkedList<Contact> list = new LinkedList<Contact>();
+	
 	public void add(String name, int phonenumber) 
  	{
 		Contact c = new Contact(name, phonenumber);

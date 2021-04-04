@@ -21,7 +21,6 @@ public class Test {
 					+ "10. Load contacts from text file\n"
 					+ "11. Exit\n");
 			op=s.nextInt();
-			//s.nextLine();
 			if(op==1)
 			{
 				System.out.println("enter a name:");
@@ -43,6 +42,7 @@ public class Test {
 			}
 			if(op==3)
 			{
+				System.out.println("Phonebook contents:");
 				pb.printPhoneBook();
 				continue;
 			}
@@ -64,7 +64,6 @@ public class Test {
 			}
 			if(op==7)
 			{
-
 				continue;
 			}
 			if(op==8)
