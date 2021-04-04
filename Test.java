@@ -74,10 +74,18 @@ public class Test {
 			}
 			if(op==9)
 			{
+				System.out.print("Enter a name for the text file: ");
+	 			String filename;
+	 			filename = s.next();
+				pb.exportToFile(filename);
 				continue;
 			}
 			if(op==10)
 			{
+				System.out.print("Enter a Text file path: ");
+				String path;
+				path = s.next();
+				pb.readFromFile(path);
 				continue;
 			}
 			if(op==11)
