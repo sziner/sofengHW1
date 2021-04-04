@@ -14,6 +14,6 @@ public class Contact {
 	 return this.phonenumber;
  }
  public void print() {
-	 System.out.print(this.name + " " + this.phonenumber);
+	 System.out.print(this.name + " " + this.phonenumber+"\n");
  }
 }

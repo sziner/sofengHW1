@@ -8,7 +8,7 @@ public class Test {
 		int op;
 		while(true)
 		{
-			System.out.println("Please select an operation:\n"
+			System.out.println("\nPlease select an operation:\n"
 					+ "1.  Add contact\n"
 					+ "2.  Remove contact (by name)\n"
 					+ "3.  Print phonebook\n"
@@ -21,12 +21,13 @@ public class Test {
 					+ "10. Load contacts from text file\n"
 					+ "11. Exit\n");
 			op=s.nextInt();
+			s.nextLine();
 			if(op==1)
 			{
-				System.out.println("enter a name:\n");
+				System.out.println("enter a name:");
 				String name;
-				name = s.nextLine();
-				System.out.println("enter a phone number:\n");
+				name = s.next();
+				System.out.println("enter a phone number:");
 				int phonenumber;
 	 			phonenumber=s.nextInt();
 				pb.add(name, phonenumber);
@@ -36,7 +37,7 @@ public class Test {
 			{
 				System.out.println("enter contact name to delete");
 				String name;
-				name = s.nextLine();
+				name = s.next();
 				pb.delete(name);
 				continue;
 			}
@@ -49,7 +50,7 @@ public class Test {
 			{
 				System.out.println("enter contact name to find");
 				String name;
-				name = s.nextLine();
+				name = s.next();
 				pb.search(name);
 				continue;
 			}
