@@ -51,6 +51,19 @@ public class PhoneBook
 	 		System.out.println(list.get(i));
 		}
  	}
+	public void sortByName()
+	{
+		list.sort(new sortByName());
+	}
+	public void sortByNumber()
+	{
+		list.sort(new sortByNumber());
+	}
+	public void removeDuplicates()
+	{
+		list.sort(new SortByNameAndNumber());
+		Contact cur = list.
+	}
  	public void reverse()
  	{
 		LinkedList<Contact> revLinkedList = new LinkedList<Contact>();
@@ -96,5 +109,9 @@ public class PhoneBook
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 	  	}
+	}
+	public void sortbyname() {
+		list.sort(Comparator<Contact>);
+		
 	}
 }//end Phonebook
