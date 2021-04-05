@@ -8,11 +8,6 @@ public class PhoneBook
 {
 	private LinkedList<Contact> list = new LinkedList<Contact>();
 	
-	public void add(String name, int phonenumber) 
- 	{
-		Contact c = new Contact(name, phonenumber);
-	 	list.add(c);
- 	}
 	private int find_index(String name)
 	{
 		for(int i=0;i<list.size();i++)
@@ -24,6 +19,11 @@ public class PhoneBook
 		}
 		return -1;
 	}
+	public void add(String name, int phonenumber) 
+ 	{
+		Contact c = new Contact(name, phonenumber);
+	 	list.add(c);
+ 	}
 	public void delete(String name)
 	{
 		int i = find_index(name);
@@ -32,37 +32,54 @@ public class PhoneBook
 			list.remove(i);
 		}
 	}
- 	public void search(String name)
+	public void printPhoneBook()
 	{
-		int i = find_index(name);
-		if(i>-1)
+		if(list.isEmpty())
 		{
-			list.get(i).print();
+			System.out.println("Phonebook is empty");
 		}
-		else
-		{
-			System.out.print("Contact not found\n");
-		}
-	}
- 	public void printPhoneBook()
-	{
 		for(int i=0;i<list.size();i++)
 		{
-	 		System.out.println(list.get(i));
+			System.out.println(list.get(i));
 		}
- 	}
+	}
+	public void search(String name)
+   {
+	   int i = find_index(name);
+	   if(i>-1)
+	   {
+		   System.out.println(list.get(i));
+	   }
+	   else
+	   {
+		   System.out.println("Contact not found\n");
+	   }
+   }
 	public void sortByName()
 	{
-		list.sort(new sortByName());
+		list.sort(new SortByName());
 	}
 	public void sortByNumber()
 	{
-		list.sort(new sortByNumber());
+		list.sort(new SortByNumber());
 	}
 	public void removeDuplicates()
 	{
+		if(list.size()<2)
+		{
+			return;
+		}
 		list.sort(new SortByNameAndNumber());
-		Contact cur = list.
+		ListIterator<Contact> it = list.listIterator(0);
+		Contact first = it.next();
+		while (it.hasNext())
+		{
+			Contact cur = it.next();
+			if(first.equals(cur))
+			{
+				it.remove();
+			}
+		}
 	}
  	public void reverse()
  	{
@@ -82,7 +99,7 @@ public class PhoneBook
 			for(int i=0;i<list.size();i++)
 			{
 				file.write(list.get(i).toString()+"\n");
-			}		
+			}
 			file.close();		
 		}
 		catch (IOException e) 
@@ -109,9 +126,5 @@ public class PhoneBook
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 	  	}
-	}
-	public void sortbyname() {
-		list.sort(Comparator<Contact>);
-		
 	}
 }//end Phonebook

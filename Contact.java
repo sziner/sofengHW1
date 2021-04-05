@@ -20,4 +20,7 @@ public class Contact {
  public void print() {
 	 System.out.println(this.toString());
  }
+ public boolean equals(Contact other) {
+	 return this.name.equals(other.name) && this.phonenumber==other.phonenumber;
+ }
 }
