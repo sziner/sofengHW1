@@ -20,6 +20,11 @@ public class Test {
 					+ "9.  Save phonebook to text file\n"
 					+ "10. Load contacts from text file\n"
 					+ "11. Exit\n");
+			if(!s.hasNextInt())
+			{
+				System.out.println("Invalid input\n");
+				continue;
+			}
 			op=s.nextInt();
 			if(op==1)
 			{
@@ -56,44 +61,54 @@ public class Test {
 			}
 			if(op==5)
 			{
+				pb.sortByName();
+				System.out.println("Phonebook sorted by name");
 				continue;
 			}
 			if(op==6)
 			{
+				pb.sortByNumber();
+				System.out.println("Phonebook sorted by numbers");
 				continue;
 			}
 			if(op==7)
 			{
+				pb.removeDuplicates();
+				System.out.println("Duplicates removed");
 				continue;
 			}
 			if(op==8)
 			{
 				pb.reverse();
+				System.out.println("Phonebook reversed");
 				continue;
 			}
 			if(op==9)
 			{
-				System.out.print("Enter a name for the text file: ");
+				System.out.println("Enter a name for the text file:");
 	 			String filename;
 	 			filename = s.next();
 				pb.exportToFile(filename);
+				System.out.println("Phonebook saved succesfully");
 				continue;
 			}
 			if(op==10)
 			{
-				System.out.print("Enter a Text file path: ");
+				System.out.println("Enter a Text file path:");
 				String path;
 				path = s.next();
 				pb.readFromFile(path);
+				System.out.println("Entries loaded succesfully");
 				continue;
 			}
 			if(op==11)
 			{
+				System.out.println("Exiting...");
 				break;
 			}
 			System.out.println("Invalid input\n");
-		}
+		}//while
 		s.close();
 		return;
-    }
-}
+    }//main
+}//Test
