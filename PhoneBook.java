@@ -48,7 +48,7 @@ public class PhoneBook
 	   int i = find_index(name);
 	   if(i>-1)
 	   {
-		   System.out.println(list.get(i));
+		   System.out.println("Contact found: " + list.get(i));
 	   }
 	   else
 	   {
@@ -78,6 +78,10 @@ public class PhoneBook
 			if(first.equals(cur))
 			{
 				it.remove();
+			}
+			else
+			{
+				first = cur;
 			}
 		}
 	}
